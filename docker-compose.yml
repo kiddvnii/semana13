@@ -1,5 +1,5 @@
 services:
-  web: 
+  web:
     build: .
     container_name: cloud_web
     ports:
@@ -10,13 +10,13 @@ services:
   db:
     image: mariadb:11.4
     container_name: cloud_db
-    environment: 
+    environment:
       MARIADB_DATABASE: cloud
       MARIADB_USER: cloud_user
       MARIADB_PASSWORD: cloud_pass
       MARIADB_ROOT_PASSWORD: root_pass
-  networks:
-    - cloud_db_net
+    networks:
+      - cloud_db_net
 networks:
   cloud_app_net:
     driver: bridge
